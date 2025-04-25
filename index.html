@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vipers</title>
+    <title>Vipers HomePage</title>
     <link rel="shortcut icon" href="Images/icon.png" />
     <style>
         /* Global Reset */
@@ -143,10 +143,12 @@
         <h1>Welcome to Vipers Minecraft Server!</h1>
         <nav>
             <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#server-info">Server Info</a></li>
                 <li><a href="#server-status">Server Status</a></li>
                 <li><a href="#contact">Contact Us</a></li>
+                <li><a href="Players.html">Players</a></li>
             </ul>
         </nav>
     </header>
@@ -158,8 +160,8 @@
 
     <section id="server-info">
         <h2>Server Information</h2>
-        <p>Server IP: <code>Vipers_GOD.aternos.me:43664</code></p>
-        <p>Version: 1.21.1</p>
+        <p>Server IP: <code>Vipers_GOD.aternos.me</code></p>
+        <p>Version: 1.21.5</p>
         <p>Server Type: Survival SMP</p>
     </section>
 
@@ -170,7 +172,7 @@
     </section>
     <section id="contact">
         <h2>Contact Us</h2>
-        <p><a href="https://discord.gg/Yb5Y4GbC39">Discord</a></p>
+        <p><a href="">Discord</a></p>
     </section>
 
     <footer>
@@ -179,7 +181,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const serverIP = 'Vipers_GOD.aternos.me:43664'; // Replace with your server IP
+            const serverIP = 'Vipers_GOD.aternos.me'; // Replace with your server IP
             const apiUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
 
             function updateServerStatus() {
