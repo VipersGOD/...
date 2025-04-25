@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vipers</title>
+    <link rel="shortcut icon" href="Images/icon.png" />
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #333;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 3px solid #ffa500;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #ffa500;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Navigation Menu */
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffa500;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            background-color: #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        section h2 {
+            color: #ffa500;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 2px solid #ffa500;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        section p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        /* Server Status Section */
+        #server-status {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #server-status p {
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+
+        #online-players, #max-players {
+            font-weight: bold;
+            color: #ffa500;
+            font-size: 1.5em;
+        }
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            margin-top: 40px;
+            border-top: 3px solid #ffa500;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #cccccc;
+        }
+
+        /* Code Styling */
+        code {
+            background-color: #444;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #ffa500;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Link Styling */
+        a {
+            color: #ffa500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e59400;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Vipers Minecraft Server!</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#server-info">Server Info</a></li>
+                <li><a href="#server-status">Server Status</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Vipers Server</h2>
+        <p>Best Private SMP on Trexmine.</p>
+    </section>
+
+    <section id="server-info">
+        <h2>Server Information</h2>
+        <p>Server IP: <code>Vipers_GOD.aternos.me</code></p>
+        <p>Version: 1.21.5</p>
+        <p>Server Type: Survival SMP</p>
+    </section>
+
+    <section id="server-status">
+        <h2>Server Status</h2>
+        <p>Online Players: <span id="online-players">Loading...</span></p>
+        <p>Max Players: <span id="max-players">15</span></p>
+    </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><a href="">Discord</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Vipers Minecraft Server. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serverIP = 'Vipers_GOD.aternos.me'; // Replace with your server IP
+            const apiUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
+
+            function updateServerStatus() {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.online) {
+                            document.getElementById('online-players').textContent = data.players.online;
+                        } else {
+                            document.getElementById('online-players').textContent = 'Server Offline';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching server data:', error);
+                        document.getElementById('online-players').textContent = 'Error loading data';
+                    });
+            }
+
+            // Update server status every 10 seconds
+            setInterval(updateServerStatus, 10000);
+
+            // Fetch server status on page load
+            updateServerStatus();
+
+            // Smooth scrolling for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
