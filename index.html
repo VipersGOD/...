@@ -3,219 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vipers HomePage</title>
+    <title>Vipers Minecraft Server</title>
     <link rel="shortcut icon" href="Images/icon.png" />
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Body Styling */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #1e1e1e;
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        /* Header Styling */
-        header {
-            background-color: #333;
-            padding: 40px 20px;
-            text-align: center;
-            border-bottom: 3px solid #ffa500;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            color: #ffa500;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Navigation Menu */
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            color: #ffa500;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 30px;
-            margin: 30px auto;
-            max-width: 800px;
-            background-color: #2c2c2c;
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        }
-
-        section h2 {
-            color: #ffa500;
-            margin-bottom: 20px;
-            font-size: 2em;
-            border-bottom: 2px solid #ffa500;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        section p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-        }
-
-        /* Server Status Section */
-        #server-status {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        #server-status p {
-            font-size: 1.3em;
-            margin: 15px 0;
-        }
-
-        #online-players, #max-players {
-            font-weight: bold;
-            color: #ffa500;
-            font-size: 1.5em;
-        }
-        /* Footer Styling */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            margin-top: 40px;
-            border-top: 3px solid #ffa500;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #cccccc;
-        }
-
-        /* Code Styling */
-        code {
-            background-color: #444;
-            padding: 2px 5px;
-            border-radius: 3px;
-            color: #ffa500;
-            font-family: 'Courier New', Courier, monospace;
-        }
-
-        /* Link Styling */
-        a {
-            color: #ffa500;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #e59400;
-            text-decoration: underline;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style_index.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Vipers Minecraft Server!</h1>
+        <h1>Vipers Minecraft Server</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#server-info">Server Info</a></li>
-                <li><a href="#server-status">Server Status</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="ServerStats.html">Server Status</a></li>
                 <li><a href="Players.html">Players</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About Vipers Server</h2>
-        <p>Best Private SMP on Trexmine.</p>
-    </section>
+    <main>
+        <section id="about">
+            <h2>About Our Server</h2>
+            <p>Welcome to <strong>Vipers</strong>, the best private SMP on Trexmine! Our server offers a unique survival experience with a friendly community, regular events, and custom features that enhance your Minecraft gameplay.</p>
+            <p>Join us today and become part of our growing community of passionate Minecraft players!</p>
+        </section>
 
-    <section id="server-info">
-        <h2>Server Information</h2>
-        <p>Server IP: <code>Vipers_GOD.aternos.me</code></p>
-        <p>Version: 1.21.5</p>
-        <p>Server Type: Survival SMP</p>
-    </section>
-
-    <section id="server-status">
-        <h2>Server Status</h2>
-        <p>Online Players: <span id="online-players">Loading...</span></p>
-        <p>Max Players: <span id="max-players">15</span></p>
-    </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p><a href="">Discord</a></p>
-    </section>
+        <section id="contact">
+            <h2>Join Our Community</h2>
+            <p>Connect with other players, get server updates, and participate in community events through our Discord server.</p>
+            <a href="#" class="discord-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+                </svg>
+                Join Vipers Discord (Friendly Server)
+            </a>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Vipers Minecraft Server. All rights reserved.</p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const serverIP = 'Vipers_GOD.aternos.me'; // Replace with your server IP
-            const apiUrl = `https://api.mcsrvstat.us/2/${serverIP}`;
-
-            function updateServerStatus() {
-                fetch(apiUrl)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.online) {
-                            document.getElementById('online-players').textContent = data.players.online;
-                        } else {
-                            document.getElementById('online-players').textContent = 'Server Offline';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error fetching server data:', error);
-                        document.getElementById('online-players').textContent = 'Error loading data';
-                    });
-            }
-
-            // Update server status every 10 seconds
-            setInterval(updateServerStatus, 10000);
-
-            // Fetch server status on page load
-            updateServerStatus();
-
-            // Smooth scrolling for internal links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
